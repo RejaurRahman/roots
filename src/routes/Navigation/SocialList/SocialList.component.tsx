@@ -21,6 +21,7 @@ const SocialList: FC = () => {
           rel="noreferrer"
           target="_blank"
           to="https://en-gb.facebook.com/"
+          aria-label="Facebook"
         >
           <FontAwesomeIcon
             icon={["fab", "facebook-f"]}
@@ -33,6 +34,7 @@ const SocialList: FC = () => {
           rel="noreferrer"
           target="_blank"
           to="https://twitter.com/"
+          aria-label="Twitter"
         >
           <FontAwesomeIcon
             icon={["fab", "twitter"]}
@@ -45,6 +47,7 @@ const SocialList: FC = () => {
           rel="noreferrer"
           target="_blank"
           to="https://www.instagram.com/"
+          aria-label="Instagram"
         >
           <FontAwesomeIcon
             icon={["fab", "instagram"]}

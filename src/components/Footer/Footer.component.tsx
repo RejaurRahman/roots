@@ -45,11 +45,12 @@ const Footer: FC = () => {
             <Link
               className="footer-logo"
               to="/"
+              aria-label="Roots Restaurant"
             >
               <LazyLoadImage
                 alt="Roots Restaurant"
-                height={55}
                 src={Logo}
+                height={55}
                 width={55}
               />
             </Link>
@@ -75,9 +76,9 @@ const Footer: FC = () => {
             </ul>
           </div>
           <div className="col-12 col-lg-4">
-            <h4 className="footer-heading">
+            <h2 className="footer-heading">
               {data.footer_copy.links_heading}
-            </h4>
+            </h2>
             <div className="footer-pages">
               <ul className="footer-pages-list">
                 {data.footer_links
@@ -86,6 +87,7 @@ const Footer: FC = () => {
                   .map((link, index) => (
                     <li key={index}>
                       <Link
+                      aria-label={link.text}
                         className={`footer-pages-link ${
                           link.href === location.pathname
                             ? "footer-pages-link-active"
@@ -105,6 +107,7 @@ const Footer: FC = () => {
                   .map((link, index) => (
                     <li key={index}>
                       <Link
+                      aria-label={link.text}
                         className={`footer-pages-link ${
                           link.href === location.pathname
                             ? "footer-pages-link-active"
@@ -120,12 +123,13 @@ const Footer: FC = () => {
             </div>
           </div>
           <div className="col-12 col-lg-4">
-            <h4 className="footer-heading">{data.footer_copy.newsletter_heading}</h4>
+            <h3 className="footer-heading">{data.footer_copy.newsletter_heading}</h3>
             <p className="footer-bodycopy">{data.footer_copy.newsletter_copy}</p>
             <FooterForm />
             <ul className="footer-social">
               <li className="footer-social-list">
                 <Link
+                aria-label="Facebook"
                   className="footer-social-link"
                   rel="noreferrer"
                   target="_blank"
@@ -141,6 +145,7 @@ const Footer: FC = () => {
                   className="footer-social-link"
                   rel="noreferrer"
                   target="_blank"
+                  aria-label="Twitter"
                   to="https://twitter.com/"
                 >
                   <FontAwesomeIcon
@@ -150,6 +155,7 @@ const Footer: FC = () => {
               </li>
               <li className="footer-social-list">
                 <Link
+                  aria-label="Instagram"
                   className="footer-social-link"
                   rel="noreferrer"
                   target="_blank"

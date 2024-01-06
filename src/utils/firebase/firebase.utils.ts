@@ -1,8 +1,6 @@
 import { initializeApp } from "firebase/app"
 import {
   getAuth,
-  signInWithPopup,
-  signInWithRedirect,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -47,8 +45,17 @@ googleProvider.setCustomParameters({
 })
 
 export const auth = getAuth()
-export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
-export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider)
+export const signInWithGooglePopup = async () => {
+  const { signInWithPopup, GoogleAuthProvider } = await import("firebase/auth")
+  const provider = new GoogleAuthProvider()
+  return signInWithPopup(auth, provider)
+}
+
+export const signInWithGoogleRedirect = async () => {
+  const { signInWithRedirect, GoogleAuthProvider } = await import("firebase/auth")
+  const provider = new GoogleAuthProvider()
+  return signInWithRedirect(auth, provider)
+}
 export const db = getFirestore()
 
 export type ObjectToAdd = {
@@ -59,6 +66,7 @@ export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
   collectionKey: string,
   objectsToAdd: T[]
 ): Promise<void> => {
+  const { collection, writeBatch, doc } = await import("firebase/firestore")
   const collectionRef = collection(db, collectionKey)
   const batch = writeBatch(db)
 

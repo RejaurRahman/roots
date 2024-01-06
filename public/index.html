@@ -10,6 +10,14 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!-- add preload image -->
+    <link rel="preload" href="../src/assets/images/home/home-slide-2.jpg" as="image" />
+    <link rel="preload" href="../src/assets/images/home/home-slide-1.jpg" as="image" />
+    <link rel="preload" href="../src/assets/images/home/home-slide-3.jpg" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/images/logo.png" as="image" />
+    <link rel="dns-prefetch" href="https://js.stripe.com">
+    <!-- preload css file -->
+    <link rel="preload" href="../src/styles/styles.scss" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
